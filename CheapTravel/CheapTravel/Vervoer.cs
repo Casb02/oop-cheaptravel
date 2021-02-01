@@ -11,7 +11,7 @@ namespace CheapTravel
         public decimal PriceKm { get; set; }
         public Brandstof Brandstof { get; set; }
         public decimal Toeslag { get; set; }
-        public String Afstand { get; set; }
+        public int Afstand { get; set; }
     }
 
     class Vliegtuig : Vervoer

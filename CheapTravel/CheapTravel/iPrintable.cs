@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheapTravel
 {
-    interface iPrintable
+    interface IPrintable
     {
     }
 }

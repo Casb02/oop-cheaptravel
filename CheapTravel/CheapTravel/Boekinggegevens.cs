@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CheapTravel
 {
-    class Hut
+    class Boekinggegevens
     {
+        public DateTime Boekingdatum { get; set; }
+        public int id { get; set; }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CheapTravel
 {
-    class Vliegtuig
+    class Brandstof
     {
+        public string Fuel { get; set; }
     }
 }

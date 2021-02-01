@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boekinggegevens.cs" />
+    <Compile Include="Brandstof.cs" />
+    <Compile Include="iPrintable.cs" />
+    <Compile Include="Persoon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reisinfo.cs" />
+    <Compile Include="Ticket.cs" />
+    <Compile Include="Ticketlijst.cs" />
+    <Compile Include="Vervoer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,5 +8,7 @@ namespace CheapTravel
 {
     class Ticket
     {
+        public Reisinfo reisInformation { get; set; }
+        public int MyProperty { get; set; }
     }
 }

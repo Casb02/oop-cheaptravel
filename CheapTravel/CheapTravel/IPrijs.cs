@@ -8,6 +8,6 @@ namespace CheapTravel
 {
     interface IPrijs
     {
-        decimal TotalPrice();
+        decimal Ticketpijs();
     }
 }

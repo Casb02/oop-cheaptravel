@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Boekinggegevens.cs" />
     <Compile Include="Brandstof.cs" />
-    <Compile Include="iPrintable.cs" />
+    <Compile Include="IFactuur.cs" />
+    <Compile Include="IPrijs.cs" />
+    <Compile Include="IPrintable.cs" />
     <Compile Include="Persoon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -31,7 +31,7 @@ namespace CheapTravel
             Console.WriteLine("Van: {0}\n Naar: {1}", ReisInformatie.StartLoc, ReisInformatie.EndLoc);
             Console.WriteLine("Vertrek: {0}\n Aankomst: {1}", ReisInformatie.Depature, ReisInformatie.Arrival);
             Console.WriteLine(" ");
-            Console.WriteLine("Prijs {0} ", Vervoer.totalPrice());
+            Console.WriteLine("Prijs {0} ", Vervoer.Ticketpijs());
 
 
         }

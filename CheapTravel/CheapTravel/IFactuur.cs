@@ -8,5 +8,6 @@ namespace CheapTravel
 {
     interface IFactuur
     {
+        string Factuur();
     }
 }

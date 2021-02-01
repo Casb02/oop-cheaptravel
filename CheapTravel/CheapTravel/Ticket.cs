@@ -6,9 +6,35 @@ using System.Threading.Tasks;
 
 namespace CheapTravel
 {
-    class Ticket
+    class Ticket : IPrintable
     {
-        public Reisinfo reisInformation { get; set; }
-        public int MyProperty { get; set; }
+        public Reisinfo ReisInformatie { get; set; }
+        public Persoon Persoon { get; set; }
+        public Boekinggegevens Boekinggegevens { get; set; }
+        public Vervoer Vervoer { get; set; }
+
+        public void PrintTicket()
+        {
+            Console.WriteLine("Boekingsgegevens");
+            Console.WriteLine("Boeking datum: {0}", Boekinggegevens.Boekingdatum);
+            Console.WriteLine("Reservering ID: {0}", Boekinggegevens.id);
+            Console.WriteLine(" ");
+            Console.WriteLine("Persoonsgegevens");
+            Console.WriteLine("Voornaam: {0}", Persoon.Voornaam);
+            Console.WriteLine("Achternaam: {0}", Persoon.Achternaam);
+            Console.WriteLine("Tussenvoegsel: {0}", Persoon.Tussenvoegsel);
+            Console.WriteLine("BSN: {0}", Persoon.BSN);
+            Console.WriteLine("Mail: {0}", Persoon.Mail);
+            Console.WriteLine("Tel Nr: {0}", Persoon.Telefoon);
+            Console.WriteLine(" ");
+            Console.WriteLine("Reisinformatie");
+            Console.WriteLine("Van: {0}\n Naar: {1}", ReisInformatie.StartLoc, ReisInformatie.EndLoc);
+            Console.WriteLine("Vertrek: {0}\n Aankomst: {1}", ReisInformatie.Depature, ReisInformatie.Arrival);
+            Console.WriteLine(" ");
+            Console.WriteLine("Prijs {0} ", Vervoer.totalPrice());
+
+
+        }
     }
+   
 }

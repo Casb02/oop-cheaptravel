@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CheapTravel
 {
-    interface iPrijs
+    interface IPrijs
     {
+        decimal TotalPrice();
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CheapTravel
 {
@@ -62,7 +58,8 @@ namespace CheapTravel
                 {
                     PrintError("Geen invoer!");
                     return "Error";
-                } else
+                }
+                else
                 {
                     return input;
                 }

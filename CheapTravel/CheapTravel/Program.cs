@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CheapTravel
 {
@@ -60,10 +56,12 @@ namespace CheapTravel
                     break;
                 }
                 // Print error if input is not an valid option
-                else if(input == "2") {
+                else if (input == "2")
+                {
                     Createticket.Create();
                     Menu();
-                } else if(input == "3")
+                }
+                else if (input == "3")
                 {
                     Persoon p = new Persoon("Cas", "Boomkamp", "", "3840719", "Example@example.exm", "0612364444");
                     Reisinfo r = new Reisinfo("Vliegtuig", "Shiphol", "Manuel's huis", DateTime.Parse("12:00"), DateTime.Parse("14:00"));
@@ -79,7 +77,8 @@ namespace CheapTravel
                     Console.ReadKey();
                     break;
 
-                } else
+                }
+                else
                 {
                     PrintError("De invoer: " + input + " is geen optie. Klik een toets om verder te gaan");
                     Console.ReadKey();

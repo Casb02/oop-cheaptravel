@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CheapTravel
 {
@@ -93,7 +89,7 @@ namespace CheapTravel
 
             int tprijs = Convert.ToInt32(Ticketpijs());
             var ebtw = tprijs / 121 * 100;
-            var btw = ebtw /100 * 21;
+            var btw = ebtw / 100 * 21;
 
             Console.WriteLine("Brandstof: " + brandstofprijstotal + " \nCO2: " + toeslagbrandstofprijstotal + " \nEconomy : " + Chairfee().ToString() + " \nTotal excl. BTW: {0} \nBTW: {1}", ebtw, btw);
         }
@@ -122,10 +118,12 @@ namespace CheapTravel
             if (Klasse == "1")
             {
                 toeslagbrandstofprijs = toeslagbrandstofprijs / 100 * 110;
-            } else if (Klasse == "2")
+            }
+            else if (Klasse == "2")
             {
                 toeslagbrandstofprijs = toeslagbrandstofprijs / 100 * 103;
-            } else
+            }
+            else
             {
                 toeslagbrandstofprijs = toeslagbrandstofprijs / 100 * 102;
             }

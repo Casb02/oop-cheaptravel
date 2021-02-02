@@ -17,6 +17,11 @@ namespace CheapTravel
         {
             throw new NotImplementedException();
         }
+
+        public virtual void Factuur()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class Vliegtuig : Vervoer, IPrintable, IPrijs, IFactuur
@@ -25,6 +30,18 @@ namespace CheapTravel
         public string Gate { get; set; }
         public string Stoeloptie { get; set; }
         public string Stoelnummer { get; set; }
+
+        public Vliegtuig(decimal pricekm, Brandstof brandstof, int afstand, string vlucht, string gate, string stoelop, string stoelnr)
+        {
+            PriceKm = pricekm;
+            Brandstof = brandstof;
+            Toeslag = Chairfee();
+            Afstand = afstand;
+            Vluchtnummer = vlucht;
+            Gate = gate;
+            Stoeloptie = stoelop;
+            Stoelnummer = stoelnr;
+        }
 
         private decimal Chairfee()
         {
@@ -66,7 +83,7 @@ namespace CheapTravel
             Console.WriteLine("Stoel: {0}", Stoelnummer);
         }
 
-        public string Factuur()
+        public override void Factuur()
         {
             var brandstofprijs = Afstand * PriceKm;
             var brandstofprijstotal = brandstofprijs.ToString("0.00");
@@ -74,9 +91,11 @@ namespace CheapTravel
             var toeslagbrandstofprijs = Brandstof.Prijs / 100 * Brandstof.Procent;
             var toeslagbrandstofprijstotal = toeslagbrandstofprijs.ToString("0.00");
 
-            var result = "Brandstof: " + brandstofprijstotal + " \n CO2: " + toeslagbrandstofprijstotal + " \n Economy : " + Chairfee().ToString() + " \nTotal excl. BTW: {4} \n BTW: {5}";
+            int tprijs = Convert.ToInt32(Ticketpijs());
+            var ebtw = tprijs / 121 * 100;
+            var btw = ebtw /100 * 21;
 
-            return result;
+            Console.WriteLine("Brandstof: " + brandstofprijstotal + " \nCO2: " + toeslagbrandstofprijstotal + " \nEconomy : " + Chairfee().ToString() + " \nTotal excl. BTW: {0} \nBTW: {1}", ebtw, btw);
         }
     }
 
@@ -84,6 +103,16 @@ namespace CheapTravel
     {
         public string Klasse { get; set; }
         public string Spoor { get; set; }
+
+        public Trein(decimal pricekm, Brandstof brandstof, decimal toeslag, int afstand, string klas, string spoor)
+        {
+            PriceKm = pricekm;
+            Brandstof = brandstof;
+            Toeslag = toeslag;
+            Afstand = afstand;
+            Klasse = klas;
+            Spoor = spoor;
+        }
 
         public override decimal Ticketpijs()
         {
@@ -112,7 +141,7 @@ namespace CheapTravel
             Console.WriteLine("Spoor: {0}", Spoor);
         }
 
-        public string Factuur()
+        public override void Factuur()
         {
             throw new NotImplementedException();
         }
@@ -124,6 +153,16 @@ namespace CheapTravel
         public string Catering { get; set; }
         public Hut Hut { get; set; }
 
+        public Boot(decimal pricekm, Brandstof brandstof, decimal toeslag, int afstand, string kade, string catering, Hut hut)
+        {
+            PriceKm = pricekm;
+            Brandstof = brandstof;
+            Toeslag = toeslag;
+            Afstand = afstand;
+            Kade = kade;
+            Catering = catering;
+            Hut = hut;
+        }
 
         public override decimal Ticketpijs()
         {
@@ -150,7 +189,7 @@ namespace CheapTravel
             Console.WriteLine("Hut: {0}, {1}", Hut.Dek, Hut.Nummer);
         }
 
-        public string Factuur()
+        public override void Factuur()
         {
             throw new NotImplementedException();
         }

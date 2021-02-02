@@ -11,10 +11,10 @@ namespace CheapTravel
         public string Transport { get; set; }
         public string StartLoc { get; set; }
         public string EndLoc { get; set; }
-        public string Depature { get; set; }
-        public string Arrival { get; set; }
+        public DateTime Depature { get; set; }
+        public DateTime Arrival { get; set; }
 
-        public Reisinfo(string transport, string startloc, string endloc, string depature, string arrival)
+        public Reisinfo(string transport, string startloc, string endloc, DateTime depature, DateTime arrival)
         {
             Transport = transport;
             StartLoc = startloc;

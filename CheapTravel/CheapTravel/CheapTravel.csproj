@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Boekinggegevens.cs" />
     <Compile Include="Brandstof.cs" />
+    <Compile Include="Createticket.cs" />
     <Compile Include="IFactuur.cs" />
     <Compile Include="IPrijs.cs" />
     <Compile Include="IPrintable.cs" />

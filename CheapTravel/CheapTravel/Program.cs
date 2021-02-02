@@ -33,6 +33,7 @@ namespace CheapTravel
             Console.WriteLine("Kies een optie");
             Console.WriteLine("1 : print ticket");
             Console.WriteLine("2 : maak ticket");
+            Console.WriteLine("3 : ticketlijst");
 
 
             while (true)
@@ -62,6 +63,22 @@ namespace CheapTravel
                 else if(input == "2") {
                     Createticket.Create();
                     Menu();
+                } else if(input == "3")
+                {
+                    Persoon p = new Persoon("Cas", "Boomkamp", "", "3840719", "Example@example.exm", "0612364444");
+                    Reisinfo r = new Reisinfo("Vliegtuig", "Shiphol", "Manuel's huis", DateTime.Parse("12:00"), DateTime.Parse("14:00"));
+                    Boekinggegevens b = new Boekinggegevens(DateTime.Parse("18-09-2020 14:00"), 1);
+
+                    Brandstof br = new Brandstof("Kerosine", 100.00M, 10);
+                    Vervoer v = new Vliegtuig(10M, br, 1000, "AB1234", "B3", "Economy", "8B");
+
+                    Ticket ticket = new Ticket(r, p, b, v);
+                    Ticketlijst tl = new Ticketlijst(1, ticket);
+                    ticket.PrintTicket();
+
+                    Console.ReadKey();
+                    break;
+
                 } else
                 {
                     PrintError("De invoer: " + input + " is geen optie. Klik een toets om verder te gaan");
